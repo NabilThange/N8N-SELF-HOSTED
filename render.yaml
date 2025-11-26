@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: free
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        generateValue: true
+      - key: N8N_HOST
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: N8N_PORT
+        value: 5678
+      - key: GENERIC_TIMEZONE
+        value: America/New_York
